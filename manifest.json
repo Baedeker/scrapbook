@@ -27,7 +27,7 @@
     "default_title": "Scrapbook"
   },
 
-  "permissions": ["storage", "tabs", "menus"],
+  "permissions": ["storage", "tabs", "menus", "activeTab"],
 
   "commands": {
     "_execute_sidebar_action": {
