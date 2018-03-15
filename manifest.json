@@ -1,0 +1,29 @@
+{
+
+  "manifest_version": 2,
+  "name": "Scrapbook Draft",
+  "description": "Simple draft of our Scrabook plugin.",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "54.0a1"
+    }
+  },
+
+  "sidebar_action": {
+    "default_icon": "icons/star.png",
+    "default_title" : "Scrapbook",
+    "default_panel": "sidebar/panel.html"
+  },
+
+  "permissions": ["storage", "tabs"],
+
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      }
+    }
+  }
+
+}
