@@ -9,14 +9,26 @@ function onCreated() {
 
 // Creating the menu items 
 browser.menus.create({
+  id: "log-selection",
+  title: browser.i18n.getMessage("menuItemSelectionLogger"),
+  contexts: ["selection"]
+}, onCreated);
+
+browser.menus.create({
 	id: "test", 
-	title: browser.i18n.getMessage("menuItemTest"),
+	title: "Test",
 	contexts: ["all"],
 }, onCreated); 
 
 browser.menus.create({
-	id: "test", 
-	title: browser.i18n.getMessage("menuItemOpenSidebar"),
+  id: "separator-1",
+  type: "separator",
+  contexts: ["all"]
+}, onCreated);
+
+browser.menus.create({
+	id: "open-sidebar", 
+	title: "Sidebar",
 	contexts: ["all"],
   	command: "_execute_sidebar_action"
 }, onCreated); 
@@ -35,9 +47,11 @@ browser.browserAction.onClicked.addListener(openManualPage)
 // EventListener for the newly added menu items
 browser.menus.onClicked.addListener((info, tab) => {
 	switch (info.menuItemId) {
+		case "log-selection":
+      		console.log("Selected log.");
+      		break;
 		case "test": 
 			console.log("\"Test\" was selected in the menu."); 
-			alert("You have selected \"Test\" in the menu."); 
 			break; 
 		case "open-sidebar" : 
 			console.log("Opening sidebar."); 
